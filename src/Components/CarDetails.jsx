@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Truck, MapPin, Tag, Star, Calendar, Info, Loader2 } from 'lucide-react';
 import axios from 'axios';
 
-// Helper component for detail items
+
 const DetailItem = ({ icon: Icon, label, value }) => (
   <div className="flex items-center space-x-3 p-3 border-b pb-3">
     <Icon className="w-6 h-6 text-gray-500" />

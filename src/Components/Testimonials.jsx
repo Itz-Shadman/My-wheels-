@@ -1,4 +1,5 @@
 export default function Testimonials() {
+  // Testimonials 
   const reviews = [
     {
       name: "Ridhi Khan",

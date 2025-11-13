@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "./context/AuthContext";
-
+// login 
 export default function Login() {
   const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate();

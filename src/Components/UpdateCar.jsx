@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useAuth } from "./context/AuthContext";
 
 export default function UpdateCar({ carId }) {
-  const { user } = useAuth(); // ✅ get logged-in user
+  const { user } = useAuth(); 
   const [carData, setCarData] = useState({
     name: "",
     description: "",
@@ -19,7 +19,7 @@ export default function UpdateCar({ carId }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Fetch car data by ID
+
   useEffect(() => {
     if (!carId) return;
 
@@ -28,7 +28,7 @@ export default function UpdateCar({ carId }) {
         const res = await axios.get(`http://localhost:3000/cars/${carId}`);
         const car = res.data;
 
-        // Fill provider info from logged-in user
+
         setCarData({
           ...car,
           providerName: user?.displayName || car.providerName,

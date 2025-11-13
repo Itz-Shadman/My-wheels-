@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../Components/context/AuthContext";
 
 export default function AddCar() {
-  const { user } = useAuth(); // ✅ get logged-in user
+  const { user } = useAuth();
   const [carData, setCarData] = useState({
     name: "",
     description: "",
@@ -17,7 +17,6 @@ export default function AddCar() {
     providerEmail: "",
   });
 
-  // Auto-fill provider info when user changes
   useEffect(() => {
     if (user) {
       setCarData((prev) => ({
@@ -30,7 +29,7 @@ export default function AddCar() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Prevent user from changing providerName/email
+
     if (name === "providerName" || name === "providerEmail") return;
     setCarData((prev) => ({ ...prev, [name]: value }));
   };
@@ -47,7 +46,7 @@ export default function AddCar() {
       const res = await axios.post("http://localhost:3000/cars", payload);
       if (res.status === 201) {
         toast.success("✅ Car added successfully!");
-        // Reset form except provider info
+
         setCarData((prev) => ({
           name: "",
           description: "",
@@ -140,7 +139,7 @@ export default function AddCar() {
           />
         </div>
 
-        {/* Provider fields are read-only */}
+
         <div>
           <label className="block mb-1 font-medium text-black">Provider Name</label>
           <input

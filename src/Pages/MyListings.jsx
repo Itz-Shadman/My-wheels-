@@ -5,14 +5,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../Components/context/AuthContext";
 
 export default function MyListings() {
-  const { user } = useAuth(); // ✅ get logged-in user
+  const { user } = useAuth(); 
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchCars = async () => {
     try {
       const res = await axios.get("http://localhost:3000/cars");
-      // Filter cars by logged-in user's email
+
       const userCars = res.data.filter(car => car.providerEmail === user?.email);
       setCars(userCars);
       setLoading(false);
@@ -24,7 +24,7 @@ export default function MyListings() {
   };
 
   useEffect(() => {
-    if (user) fetchCars(); // fetch only if user is logged in
+    if (user) fetchCars();
   }, [user]);
 
   const handleDelete = async (id) => {

@@ -28,38 +28,36 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
 
-      // Add Car
+
       { path: "add-car", Component: ProtectedAddCar },
       { path: "add-car", Component: AddCar },
 
-      // My Listings
       { path: "my-listings", Component: ProtectedMyListings },
       { path: "my-listings", Component: MyListings },
 
-      // My Bookings (list)
+     
       { path: "my-bookings", Component: ProtectedBookings, children: [
           { index: true, Component: MyBookings }
       ]},
 
-      // Update Car
+
       { path: "update-car/:id", Component: UpdateCar },
 
-      // Browse Cars
+  
       { path: "browse-cars", Component: BrowseCars },
 
-      // Car Details (dynamic route)
       { path: "cars/:id", Component: CarDetails },
 
-      // Book Now (dynamic, protected)
+
       { path: "book/:id", Component: ProtectedBookings, children: [
           { index: true, Component: MyBookings }
       ]},
 
-      // Auth
+
       { path: "login", Component: Login },
       { path: "register", Component: Register },
 
-      // 404
+
       { path: "*", Component: NotFound },
     ],
   },

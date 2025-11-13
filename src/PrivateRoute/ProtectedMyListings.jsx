@@ -11,11 +11,10 @@ export default function ProtectedMyListings() {
   useEffect(() => {
     if (!user) {
       toast.info("⚠ You must be logged in to view your listings");
-      navigate("/login"); // redirect if not logged in
+      navigate("/login"); 
     }
   }, [user, navigate]);
 
-  if (!user) return null; // prevent showing table before redirect
-
-  return <MyListings />; // render your original listings
+  if (!user) return null; 
+  return <MyListings />; 
 }

@@ -11,11 +11,11 @@ export default function ProtectedBookings() {
   useEffect(() => {
     if (!user) {
       toast.info("⚠ You must be logged in to view your bookings");
-      navigate("/login"); // redirect if not logged in
+      navigate("/login"); 
     }
   }, [user, navigate]);
 
-  if (!user) return null; // prevent showing table before redirect
+  if (!user) return null; 
 
-  return <MyBookings />; // render your original bookings
+  return <MyBookings />; 
 }

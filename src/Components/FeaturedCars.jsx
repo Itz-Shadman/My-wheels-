@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+// featured cars 
 const FeaturedCars = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);

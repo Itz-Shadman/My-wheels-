@@ -11,12 +11,12 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      {/* Logo */}
+
       <div className="text-2xl font-bold">
         <Link to="/">RentWheels</Link>
       </div>
 
-      {/* Navigation Links */}
+
       <ul className="flex space-x-6">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/add-car">Add Car</Link></li>
@@ -25,7 +25,6 @@ export default function Navbar() {
         <li><Link to="/browse-cars">Browse Cars</Link></li>
       </ul>
 
-      {/* Conditional Auth Section */}
       <div className="flex items-center space-x-4 relative">
         {!user ? (
           <>

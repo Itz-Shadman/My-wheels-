@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
-
+// hero slider  
 const HeroSlider = () => {
   return (
     <div className="w-full max-w-7xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-lg">

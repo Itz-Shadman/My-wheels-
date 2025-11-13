@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+// not found 
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 px-4">
